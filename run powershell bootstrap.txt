@@ -1,11 +1,11 @@
-$MyAzureName = "jstephenson@mintazure.onmicrosoft.com";
-$MyAzurePassword = ConvertTo-SecureString 'Install999' -AsPlainText -Force;
+$MyAzureName = "name@email.com";
+$MyAzurePassword = ConvertTo-SecureString 'yourpassword' -AsPlainText -Force;
 $psCred = New-Object System.Management.Automation.PSCredential($MyAzureName, $MyAzurePassword)
 
 Login-AzureRmAccount -Credential $psCred -EnvironmentName AzureUSGovernment  
 Get-AzureRmSubscription –SubscriptionName "MINT-DGI-EDH-PROD" | Select-AzureRmSubscription
 
-$rg = New-AzureRmResourceGroup -Name "testVM" -Location "USGov Virginia"
+$rg = New-AzureRmResourceGroup -Name "testVM" -Location "USGov East"
 
 $path = "C:\Users\Waypoint\Desktop\MINT\Mint EDH\0. Azure Github Bootstrap\~bootstrap github\201-vm-custom-image-new-storage-account-waypointdelta"
 
