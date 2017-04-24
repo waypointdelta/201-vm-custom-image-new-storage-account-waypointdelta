@@ -4,8 +4,8 @@
 .PARAMETER SourceImage
 	SourceImage - Contains one or more full path URLs to source VHDs, if more than one must be provided, make them comma separated
 				E.g.
-				https://pmcsa06.blob.core.windows.net/system/Microsoft.Compute/Images/myimage01.vhd
-				https://pmcsa06.blob.core.windows.net/system/Microsoft.Compute/Images/myimage01.vhd,https://pmcsa06.blob.core.windows.net/system/Microsoft.Compute/Images/myimage02.vhd
+				https://pmcsa06.blob.core.usgovcloudapi.net/system/Microsoft.Compute/Images/myimage01.vhd
+				https://pmcsa06.blob.core.usgovcloudapi.net/system/Microsoft.Compute/Images/myimage01.vhd,https://pmcsa06.blob.core.usgovcloudapi.net/system/Microsoft.Compute/Images/myimage02.vhd
 
 .PARAMETER SourceSAKey 
 	SourceSAKey - Source storage account Key
