@@ -84,9 +84,10 @@
       "[concat(parameters('transferVmName'),'PublicIP')]",
       "[concat(parameters('newVmName'),'PublicIP')]"
     ],
-    "OSVersion": "RHEL68",
     "imagePublisher": "Redhat",
     "imageOffer": "RHEL",
+    "imageSku": "6.8",
+    "imageVersion": "6.8.20161028",
     "osDiskName": "OSDisk",
     "transferVmSize": "Standard_DS11",
     "vhdStorageAccountContainerName": "vhds",
@@ -213,8 +214,8 @@
           "imageReference": {
             "publisher": "[variables('imagePublisher')]",
             "offer": "[variables('imageOffer')]",
-            "sku": "[variables('OSVersion')]",
-            "version": "latest"
+            "sku": "[variables('imageSku')]",
+            "version": "[variables('imageVersion')]"
           },
           "osDisk": {
             "name": "[concat(variables('vmNames')[0],'-osdisk')]",
