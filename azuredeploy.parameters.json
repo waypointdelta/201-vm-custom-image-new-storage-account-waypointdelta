@@ -3,13 +3,13 @@
   "contentVersion": "1.0.0.0",
   "parameters": 
   {
-    "adminUserName":                     { "value": "install"       },
-    "adminPassword":                     { "value": "Install999!"   },
-    "vmSize":                            { "value": "Standard_DS11" },
-    "sourceStorageAccountResourceGroup": { "value": "test"          },
-    "sourceImageURI":                    { "value": "https://storagetest.blob.core.usgovcloudapi.net/images/RHEL68-x86_64.vhd"    },
-    "customImageName":                   { "value": "RHEL68-OSdisk.vhd" },
-    "transferVmName":                    { "value": "TransferVM"    },
-    "newVmName":                         { "value": "NewVM"         }
+    "adminUserName":    { "value": "install"       },
+    "adminPassword":    { "value": "Install999!"   },
+    "vmSize":           { "value": "Standard_DS11" },
+    "srcStorageRG":     { "value": "prod-edh-rg-gv-templates"          },
+    "sourceImageURI":   { "value": "https://storagetest.blob.core.usgovcloudapi.net/images/RHEL68-x86_64.vhd"    },
+    "customImageName":  { "value": "RHEL68-OSdisk.vhd" },
+    "transferVmName":   { "value": "TransferVM"    },
+    "newVmName":        { "value": "NewVM"         }
   }
 }
