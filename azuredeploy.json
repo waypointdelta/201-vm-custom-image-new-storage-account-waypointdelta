@@ -8,7 +8,7 @@
       "minLength": 3,
       "maxLength": 15,
       "metadata": {
-        "description": "Name of the Windows VM that will perform the copy of the VHD from a source storage account to the new storage account created in the new deployment, this is known as transfer vm."
+        "description": "Name of the VM that will perform the copy of the VHD from a source storage account to the new storage account created in the new deployment, this is known as transfer vm."
       }
     },
     "vmSize": {
@@ -84,11 +84,11 @@
       "[concat(parameters('transferVmName'),'PublicIP')]",
       "[concat(parameters('newVmName'),'PublicIP')]"
     ],
-    "windowsOSVersion": "2012-R2-Datacenter",
-    "imagePublisher": "MicrosoftWindowsServer",
-    "imageOffer": "WindowsServer",
+    "OSVersion": "RHEL68",
+    "imagePublisher": "Redhat",
+    "imageOffer": "RHEL",
     "osDiskName": "OSDisk",
-    "transferVmSize": "Standard_D1",
+    "transferVmSize": "Standard_DS11",
     "vhdStorageAccountContainerName": "vhds",
     "customScriptFolder": "CustomScripts",
     "trfCustomScriptFiles": [
@@ -213,7 +213,7 @@
           "imageReference": {
             "publisher": "[variables('imagePublisher')]",
             "offer": "[variables('imageOffer')]",
-            "sku": "[variables('windowsOSVersion')]",
+            "sku": "[variables('OSVersion')]",
             "version": "latest"
           },
           "osDisk": {
@@ -250,7 +250,7 @@
             "typeHandlerVersion": "1.4",
             "settings": {
               "fileUris": [
-                "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-vm-custom-image-new-storage-account/ImageTransfer.ps1"
+                "https://raw.githubusercontent.com/waypointdelta/201-vm-custom-image-new-storage-account-waypointdelta/master/ImageTransfer.ps1"
               ]
             },
             "protectedSettings": {
@@ -261,7 +261,7 @@
       ]
     },
     {
-      "comments": "# New Windows VM based on custom image",
+      "comments": "# New VM based on custom image",
       "name": "[variables('vmNames')[1]]",
       "type": "Microsoft.Compute/virtualMachines",
       "location": "[resourceGroup().location]",
@@ -286,7 +286,7 @@
         "storageProfile": {
           "osDisk": {
             "name": "[concat(variables('vmNames')[1],'-osdisk')]",
-            "osType": "windows",
+            "osType": "Linux",
             "createOption": "FromImage",
             "caching": "ReadWrite",
             "image": {
